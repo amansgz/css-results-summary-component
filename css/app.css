@@ -1,0 +1,198 @@
+:root {
+  /*  Gradients */
+  --light-slate-blue: hsl(252, 100%, 67%);/*  (background) */
+  --light-royal-blue: hsl(241, 81%, 54%); /*  (background) */  
+  --violet-blue: hsla(256, 72%, 46%, 1); /*  (circle) */
+  --persian-blue: hsla(241, 72%, 46%, 0); /*  (circle) */
+
+  --light-red: hsl(0, 100%, 67%);
+  --orangey-yellow: hsl(39, 100%, 56%);
+  --green-teal: hsl(166, 100%, 37%);
+  --cobalt-blue: hsl(234, 85%, 45%);
+  
+  --transparency-red: hsla(0, 100%, 67%, 0.1);
+  --transparency-yellow: hsla(39, 100%, 56%, 0.1);
+  --transparency-teal: hsla(166, 100%, 37%, 0.1);
+  --transparency-blue: hsla(234, 85%, 45%, 0.1);
+  
+  --white: hsl(0, 0%, 100%);
+  --pale-blue: hsl(221, 100%, 96%);
+  --light-lavender: hsl(241, 100%, 89%);
+  --dark-gray-blue: hsl(224, 30%, 27%);
+  --light-gray-blue: hsl(224, 30%, 35%);
+}
+@font-face {
+  font-family: 'sans serif';
+  src: url('./assets/fonts/HankenGrotesk-VariableFont_wght.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  font-family: 'Hanken Grotesk', sans-serif;
+  background-color: var(--pale-blue);
+}
+main {
+  width: 100vw;
+  background-color: var(--white);
+  box-shadow: 0px 6px 20px 5px var(--light-lavender);
+}
+.result-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 400px;
+  padding: 1rem;
+  background-image: linear-gradient(var(--light-slate-blue), var(--light-royal-blue));
+  color: var(--white);
+  border-bottom-left-radius: 38px;
+  border-bottom-right-radius: 38px;
+}
+.title {
+  font-size: 20px;
+  color: var(--light-lavender);
+}
+.circle {
+  width: 170px;
+  padding: 2rem;
+  font-size: 64px;
+  text-align: center;
+  background-image: linear-gradient(var(--violet-blue), var(--persian-blue));
+  
+  color: var(--white);
+  border-radius: 50%;
+}
+.circle-percent {
+  display: block;
+  font-size: 15px;
+  color: var(--light-lavender);
+}
+.result-text {
+  width: 260px;
+  text-align: center;
+  color: var(--light-lavender);
+  line-height: 1.5;
+}
+/*
+SUMMARY SCORES
+*/
+.summary-section {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--white);
+}
+.summary-title {
+  align-self: flex-start;
+  padding-bottom: 2rem;
+  font-size: 20px;
+}
+.score {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85vw;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
+}
+.score:first-child {
+  background-color: var(--transparency-red);
+  color: var(--light-red);
+}
+.score:nth-child(2) {
+  background-color: var(--transparency-yellow);
+  color: var(--orangey-yellow);
+}
+.score:nth-child(3) {
+  background-color: var(--transparency-teal);
+  color: var(--green-teal);
+}
+.score:last-child {
+  background-color: var(--transparency-blue);
+  color: var(--cobalt-blue);
+}
+.score > div {
+  display: flex;
+  justify-content: space-around;
+}
+.score-category {
+  padding-left: .5rem;
+}
+.score-bold {
+  font-weight: bold;
+  color: var(--dark-gray-blue);
+}
+.score-light {
+  color: var(--light-gray-blue);
+}
+.submit {
+  width: 85vw;
+  padding: 1rem 2rem;
+  margin: auto;
+  text-decoration: none;
+  text-align: center;
+  background-color: var(--dark-gray-blue);
+  color: var(--pale-blue);
+  border-radius: 24px;
+}
+.submit:hover,
+.submit:focus {
+  background-color: var(--cobalt-blue);
+}
+
+
+@media screen and (min-width: 768px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  main {
+    display: flex;
+    width: auto;
+    max-width: 900px;
+    border-radius: 24px;
+    border-bottom-left-radius: 38px;
+    border-top-left-radius: 38px;
+  }
+  .result-section {
+    width: 35vw;
+    max-width: 400px;
+    height: 480px;
+  }
+  .result-text {
+    width: 230px;
+  }
+  .summary-section {
+    width: 35vw;
+    max-width: 500px;
+    height: 480px;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+   .result-section {
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+   }
+   .summary-section {
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+   }
+   .score {
+    width: 30vw;
+   }
+   .submit {
+    width: 30vw;
+   }
+}
