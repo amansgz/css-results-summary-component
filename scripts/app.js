@@ -11,7 +11,8 @@ function showInfo(data) {
     <div class= 'score'>
       <div>
         <img class= 'score-icon'
-        src= ${item.icon} alt= 'icon category'>
+        src= ${item.icon} 
+        alt= ''>
         <p class= 'score-category'>${item.category}</p>
       </div>
       <div>
