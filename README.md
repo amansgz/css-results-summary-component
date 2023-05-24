@@ -5,3 +5,4 @@
 This is a solution for [Results Summary Component](https://www.frontendmentor.io/challenges/results-summary-component-CE_K6s0maV) challenge.
 
 [Live site](https://amansgz.github.io/css-results-summary-component/)
+![preview screenshot](./css/assets/images/results-preview.png)
