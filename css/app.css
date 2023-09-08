@@ -1,9 +1,8 @@
 :root {
-  /*  Gradients */
-  --light-slate-blue: hsl(252, 100%, 67%);/*  (background) */
-  --light-royal-blue: hsl(241, 81%, 54%); /*  (background) */  
-  --violet-blue: hsla(256, 72%, 46%, 1); /*  (circle) */
-  --persian-blue: hsla(241, 72%, 46%, 0); /*  (circle) */
+  --light-slate-blue: hsl(252, 100%, 67%);
+  --light-royal-blue: hsl(241, 81%, 54%);
+  --violet-blue: hsla(256, 72%, 46%, 1);
+  --persian-blue: hsla(241, 72%, 46%, 0);
 
   --light-red: hsl(0, 100%, 67%);
   --orangey-yellow: hsl(39, 100%, 56%);
@@ -32,34 +31,42 @@
   margin: 0;
   box-sizing: border-box;
 }
+html {
+  height: 100%;
+}
 body {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  min-height: 100%;
+  max-width: 1440px;
+  margin: auto;
   font-family: 'Hanken Grotesk', sans-serif;
   background-color: var(--pale-blue);
 }
-main {
-  width: 100vw;
+.container {
   background-color: var(--white);
   box-shadow: 0px 6px 20px 5px var(--light-lavender);
 }
-.result-section {
+/************************
+  RESULT
+/************************/
+.result {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   height: 400px;
-  padding: 1rem;
+  padding: 1.5rem 0;
   background-image: linear-gradient(var(--light-slate-blue), var(--light-royal-blue));
   color: var(--white);
   border-bottom-left-radius: 38px;
   border-bottom-right-radius: 38px;
 }
-.title {
+.result__title {
   font-size: 20px;
   color: var(--light-lavender);
 }
-.circle {
+.result__number {
   width: 170px;
   padding: 2rem;
   font-size: 64px;
@@ -69,21 +76,21 @@ main {
   color: var(--white);
   border-radius: 50%;
 }
-.circle-percent {
+.result__number span:nth-child(2) {
   display: block;
   font-size: 15px;
   color: var(--light-lavender);
 }
-.result-text {
+.result__description {
   width: 260px;
   text-align: center;
   color: var(--light-lavender);
   line-height: 1.5;
 }
-/*
-SUMMARY SCORES
-*/
-.summary-section {
+/************************
+  SUMMARY 
+/************************/
+.summary {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -91,10 +98,10 @@ SUMMARY SCORES
   align-items: center;
   background-color: var(--white);
 }
-.summary-title {
+.summary__title {
   align-self: flex-start;
   padding-bottom: 2rem;
-  font-size: 20px;
+  font-size: 18px;
 }
 .score {
   display: flex;
@@ -135,7 +142,7 @@ SUMMARY SCORES
 .score-light {
   color: var(--light-gray-blue);
 }
-.submit {
+.btn__continue {
   width: 85vw;
   padding: 1rem 2rem;
   margin: auto;
@@ -145,54 +152,68 @@ SUMMARY SCORES
   color: var(--pale-blue);
   border-radius: 24px;
 }
-.submit:hover,
-.submit:focus {
+.btn__continue:hover,
+.btn__continue:focus-visible {
   background-color: var(--cobalt-blue);
 }
+/************************
+  FOOTER
+/************************/
+.footer {
+  margin-top: auto;
+  padding: 6rem 2rem 2rem;
+  text-align: center;
+  color: var(--dark-gray-blue);
+}
+.footer__attribution a {
+  text-decoration: none;
+  color: var(--dark-gray-blue);
+  transition: color .1s ease;
+}
+.footer__attribution a:hover,
+.footer__attribution a:focus-visible {
+  color: var(--light-royal-blue);
+}
 
-
+/************************
+  MEDIA QUERIES 768px
+/************************/
 @media screen and (min-width: 768px) {
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
   main {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+  }
+  .container {
     display: flex;
-    width: auto;
     max-width: 900px;
     border-radius: 24px;
     border-bottom-left-radius: 38px;
     border-top-left-radius: 38px;
   }
-  .result-section {
+  .result {
     width: 35vw;
     max-width: 400px;
     height: 480px;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
   }
-  .result-text {
+  .result__description {
     width: 230px;
   }
-  .summary-section {
+  .summary {
     width: 35vw;
     max-width: 500px;
     height: 480px;
     padding-top: 3rem;
     padding-bottom: 3rem;
-  }
-   .result-section {
-    border-top-left-radius: 24px;
-    border-top-right-radius: 24px;
-   }
-   .summary-section {
     border-top-right-radius: 24px;
     border-bottom-right-radius: 24px;
    }
    .score {
     width: 30vw;
    }
-   .submit {
+   .btn__continue {
     width: 30vw;
    }
 }
